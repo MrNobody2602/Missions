@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:opsz,wdth,wght@6..12,89.4,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+:root {
+    /* PALETTE 1 */
+    --first: #a57ac1;
+    --second: #e397d5;
+    --third: #fdb5da;
+    --fourth: #8683ca;
+
+    /* PALETTE 2 */
+    --first2: #3e4a7a;
+    --second2: #4d3974;
+    --third2: #ac7a95;
+    --fourth2: #b16393;
+
+    /* PALETTE 3 */
+    --first3: #b1a3bc;
+    --second3: #d397b1;
+    --third3: #ff989c;
+    --fourth3: #c16260;
+
+    /* FORM BACKGROUND */
+    --formBackground: #f6f6f6;
+
+    /* INPUT BORDER */
+    --inputBorder: #cfcfcf;
+
+    /* TEXT COLOR */
+    --textColor: #d3d3d3;
+
+    /* VALID */
+    --valid: #03F805;
+
+    /* INVALIDATION */
+    --invalid: #e92424;
+}
+
+/* GLOBAL STYLING */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    border: 2px solid var(--first);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px var(--first);
+    background-color: var(--formBackground);
+}
+
+.pDetail {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0%;
+}
+
+.form-control, .form-select {
+    margin: 5px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+input.form-control::placeholder {
+    color: var(--textColor);
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* INVALID */
+.form-control.invalid {
+    border: 2px solid var(--invalid);
+    border-radius: 15px;
+}
+
+.form-select.invalid {
+    color: var(--textColor);
+    border: 2px solid var(--invalid);
+    border-radius: 15px;
+}
+
+/* INPUT FIELDS */
+input[class='form-control'] {
+    border: 2px solid var(--inputBorder);
+    border-radius: 15px;
+}
+
+input[class='form-control']:focus {
+    border: 2px solid var(--first);
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+/* DROPDOWNS */
+.form-select.selected {
+    outline: 0;
+    color: var(--second2);
+    text-align: center;
+    border: 2px solid var(--first);
+    border-radius: 15px;
+    box-shadow: none;
+}
+
+select[class="form-select"] {
+    color: var(--textColor);
+    text-align: center;
+    border: 2px solid var(--inputBorder);
+    border-radius: 15px;
+    width: 100%;
+}
+
+select[class="form-select"]:focus {
+    color: var(--first2);
+    outline: 0;
+    border: 2px solid var(--second2);
+    box-shadow: none;
+}
+
+/* BUTTON */
+.container .btn-primary {
+    text-align: center;
+    background-color: var(--second2);
+    border: none;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.container .btn-primary:hover {
+    background-color: var(--first);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-select{
+        width: 50%;
+    }
+    .container .btn-primary{
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 15px;
+    }
+}
